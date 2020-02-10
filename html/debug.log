@@ -1,0 +1,9 @@
+[0128/101459.889:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/102459.927:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/102459.959:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/102959.947:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/104459.948:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/105959.950:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/110953.255:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/110953.449:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: L’opération a réussi. (0x0)
+[0201/034612.244:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0

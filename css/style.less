@@ -1,0 +1,596 @@
+body{
+    margin : 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+
+    /* Burger menu *****************************************/
+
+    .burger_menu{
+        display: none;
+    }
+
+    .menu-toggle .burger-breads span{
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: white;
+        z-index: 1;
+      }
+      .menu-close .burger-breads span{
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #ffffff;
+        z-index: 1;
+        transform:rotate(45deg) translate(-2px, -1px);
+        background: white;
+      }
+      .menu-close .burger-breads span:nth-child(2){
+        transform: rotate(135deg) translate(-6px, 9px);
+      }
+      .menu-close .burger-breads span:nth-child(3){
+        opacity: 0;
+      }
+      /*Style menu*/
+      .main-menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: visible;
+        transition: left 0.3s ease, box-shadow 0.3s ease;
+        z-index: 999;
+      }
+      .main-menu ul {
+        margin: 0;
+        padding: 2.5em 0 0;
+        min-height: 100%;
+        width: 200%;
+        background: black;
+      }
+      .main-menu a{
+        display: block;
+        padding: .75em 15px;
+        /* line-height: 1em; */
+        font-size: 2em;
+        font-weight: lighter;
+        color: #ffff;
+        text-decoration: none;
+      }
+      .main-menu .menu-close{
+        position: absolute;
+        margin-top: 1em;
+        right: 0;
+      }
+      /*Hiding Menu*/
+      .main-menu{
+        display: none;
+        right: -200px;
+      }
+    
+      .main-menu:target{
+        display: block;
+        right: 0;
+        outline: none;
+        box-shadow: 3px 0 12px rgba(0, 0, 0, .25);
+    }
+    .main-menu:target .menu-close{
+        z-index: 1001;
+        padding-bottom: 1px;
+    }
+    .main-menu:target ul{
+        position: relative;
+        z-index: 1000;
+    }
+    .main-menu:target + .backdrop{
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        cursor: default;
+    }
+    @supports (position: fixed){
+        .main-menu,
+        .main-menu:target + .backdrop{
+            position: fixed;
+        }
+    }
+
+    .flex_row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex_wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .corps{
+        max-width: 1120px;
+        display: block;
+        margin: auto;
+    }
+
+    section{
+        margin: 8em 1.5em;
+    }
+
+
+    p{
+        color: white;
+    }
+    
+    h2{
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 6px;
+        color: white;
+        text-align: center;
+        margin: 2em 0;
+    }
+
+    h3{
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 6px;
+        color: white;
+        text-align: center;
+    }
+
+    button {
+        background-color: white; /* Green */
+        border: 2px solid rgb(255, 255, 255, 0);
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        font-weight: bold;
+      }
+  
+    button:hover{
+        background-color: black;
+        border: 2px solid white;
+        color : white
+    }
+
+    a:hover{
+        color: white;
+    }
+
+    
+
+    /****************************** header **************************************/
+    
+    header{
+        padding: 3em; 
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        color: white;
+    }
+
+    li{
+    list-style: none;
+    margin: 1em 10px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 10px;
+    }
+
+    li:hover{
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: white;
+    }
+
+    .logo{
+        height: 1.5em;
+    }
+
+    h2{
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 6px;
+        color: white;
+        text-align: center;
+        margin: 2em 0;
+    }
+
+    h3{
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 6px;
+        color: white;
+        text-align: center;
+    }
+
+    /*************footer**********************/
+
+    .pre_footer img{
+        width: 12em;
+    }
+
+    .pre_footer .tonneau {
+        transition: all 4.5s ease-in;
+    }
+
+    .pre_footer:hover .tonneau {
+        transform: rotate(720deg);
+        margin-right: 150em;
+    }
+
+    .pre_footer:hover .donkey {
+        animation: jump_donkey_kong 5s;
+    }
+
+
+
+    @keyframes jump_donkey_kong {
+        0%{
+            transform: translateX(0);
+        }
+
+        /*45%{
+            margin-right: 45em;
+            transform: translateX(-45em);
+            transform: translateY(0);
+        }*/
+
+        60%{
+            transform: translateX(30em) translateY(-150px);
+        }
+
+        62%{
+            transform: translateX(30em) translateY(0);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    footer{
+        border-top: 1px solid white;
+        padding: 1em 20%;
+    }
+
+    footer h3{
+        text-align: left;
+    }
+
+    @media only screen and (max-width: 700px) {
+    .burger_menu{
+        display: block;
+    }
+    
+    .nav_desktop{
+        display: none;
+    }
+
+    li:hover{
+        border: none;
+    }
+
+    }
+
+  }
+
+
+
+
+    /******************************** Page Home ***********************************/
+
+    body.home{
+
+    h1{
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+       font-weight: 800;
+        color: white;
+        margin: 10px 0;
+        letter-spacing: 6px;     
+        font-size: 70px;
+    }
+    /****** hero *****************************/
+
+    .background_img{
+        background-image: url("../img/jungle_deux.jpg");
+        height: 650px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        display: flex;
+    }
+
+    .hero{
+        margin: auto;   
+    }
+
+    .intro{
+        column-count: 3;
+        column-gap: 30px;
+    }
+
+    .intro p{
+        margin: 0;
+    }
+
+    .intro h2{
+        column-span: all;
+    }
+
+    .hero p{
+        color: white;
+        text-align: center;
+        width: 50%;
+        display: block;
+        margin: auto; 
+        font-weight: 100;
+       }
+    
+     
+    /************** intro ********************/
+    .paragraphe{
+        width: 30%;
+        text-align: center;
+    }
+
+
+    /************** fiches ******************/
+
+    .fiches{
+        width: 30%;
+    }
+
+    figure img{
+        width : 100%;
+    }
+
+
+    /************* mediaqueries *************/
+
+    @media only screen and (max-width: 700px) {
+        .intro{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .paragraphe{
+            width: 60%;
+        }
+
+        .hero p{
+            width: 90%;
+        }
+        
+        .burger_menu{
+            display: block;
+        }
+    
+        .nav_desktop{
+            display: none;
+        }
+    }
+
+}
+
+/******** Page Fiche Gorilla ***********************************/
+
+body.fiche{
+
+    section{
+        margin: 1em auto 6em;
+    }
+
+    h1{
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: white;
+    margin: 60px 0;
+    letter-spacing: 6px;
+    font-size: 70px;
+    padding: 1.5em 49px 0 49px;
+    }
+
+    .hero{   
+    height: 442px;
+    display: flex;
+    align-items: center;
+    }
+
+    .fiches figure img{
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    .fiches figure p{
+        height: 100px;
+    }
+
+    figure{
+        margin: 0;
+    }
+
+    .fiches{
+        width: 30%;
+        min-width: 300px;
+        margin: 20px 5px;
+    }
+
+    .fiches p{
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 380px) {
+        h1{
+            font-size: 36px;
+        }
+    }
+}
+
+/******** Page Probocis ***********************************/
+
+body.probocis{
+
+    h1{
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        color: white;
+        margin: 10px 0;
+        letter-spacing: 6px;
+        font-size: 70px;
+    }
+
+    .txt_img h2{
+        margin : 0;
+        font-size: 38px;
+        text-align: left;
+    }
+/****** hero *****************************/
+
+.background_img{
+    background-image: url("../img/monkeys.jpg");
+    height: 650px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    display: flex;
+}
+
+.hero{
+    margin: auto;   
+}
+
+.hero p{
+    color: white;
+    text-align: center;
+    width: 50%;
+    display: block;
+    margin: auto; 
+    font-weight: 100;
+}
+
+.explication img{
+    width : 100%;
+    min-width : 330px;
+}
+
+.paragraphe{
+    width: 30%;
+    min-width: 330px;
+    margin: 1em;
+}
+
+.paragraphe_intro{
+    margin: 1.5em 0;
+    text-align: left;
+}
+
+.texte_corps{
+    column-count: 3;
+    column-gap: 30px;
+}
+
+.texte_corps p{
+    margin: 0;
+}
+
+.intro div{
+    margin: 1em;
+    width: 50%;
+}
+
+@media only screen and (max-width: 950px) {
+    .explication .flex_row{
+        flex-direction: column;
+    }
+
+    .intro div {
+        width: 100%;
+    }
+
+    .txt_img h2{
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .intro img{
+        display: block;
+        margin: auto;
+        max-width: 500px;
+    }
+
+    .hero p{
+        width: 90%;
+    }
+
+
+    .paragraphe_intro{
+        text-align: center;
+        margin: 1em 1em;
+    }
+
+    .txt_img{
+        width : 90%;
+        margin-top: 3em;
+    }
+
+    .burger_menu{
+        display: block;
+    }
+
+    .nav_desktop{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    h1{
+        font-size: 36px;
+    }
+
+    .texte_corps {
+        column-count: 2;
+    }
+
+    .burger_menu{
+        display: block;
+    }
+
+    .nav_desktop{
+        display: none;
+    }
+
+    header ul{
+        padding: 0;
+    }
+
+}   
+
+@media only screen and (max-width: 400px) {
+
+    body.probocis .texte_corps {
+    column-count: 1;
+}   
+}
+}
