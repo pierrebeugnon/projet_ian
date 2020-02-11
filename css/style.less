@@ -112,6 +112,11 @@ body{
         align-items: center;
     }
 
+    .flex_footer{
+        display: flex;
+        flex-direction: row;
+    }
+
     .flex_wrap{
         display: flex;
         flex-wrap: wrap;
@@ -238,8 +243,6 @@ body{
         animation: jump_donkey_kong 5s;
     }
 
-
-
     @keyframes jump_donkey_kong {
         0%{
             transform: translateX(0);
@@ -265,11 +268,49 @@ body{
 
     footer{
         border-top: 1px solid white;
-        padding: 1em 20%;
+        padding: 2em 5em;
+    }
+
+    footer h2{
+        text-align: left;
+        margin-left: 1em;
     }
 
     footer h3{
         text-align: left;
+    }
+
+    footer .img_footer{
+        width: 50%;
+        height: auto;
+    }
+
+    footer .img_footer img{
+        width : 24%;
+    }
+
+    .footer_flex_row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer_flex_row img{
+        width: 100px;
+    }
+
+    .footer_flex_row p{
+        margin: 0 1em;
+    }
+
+    footer nav ul{
+        padding: 0;
+    }
+
+    .conteneur_footer_flex_row{
+        display: flex;
+        justify-content: space-between;
     }
 
     @media only screen and (max-width: 700px) {
@@ -287,10 +328,38 @@ body{
 
     }
 
+    @media only screen and (max-width: 600px) {
+        .conteneur_footer_flex_row{
+            flex-direction: column;
+        }
+
+        .footer_style div nav ul{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer_style div nav ul li{
+            text-align: center;
+        }
+
+        .footer_flex_row{
+            flex-direction: column;
+        }
+
+        .footer_flex_row p {
+            margin: 1em 0;
+            text-align: center;
+        }
+
+        footer h2 {
+            text-align: center;
+            margin-left: 0;
+        }
+
+    }
+
+
   }
-
-
-
 
     /******************************** Page Home ***********************************/
 
@@ -353,7 +422,12 @@ body{
     /************** fiches ******************/
 
     .fiches{
-        width: 30%;
+        width: 33%;
+        min-width: 280px;
+    }
+
+    figure{
+        margin: 1em;
     }
 
     figure img{
@@ -362,6 +436,7 @@ body{
 
 
     /************* mediaqueries *************/
+
 
     @media only screen and (max-width: 700px) {
         .intro{
@@ -413,6 +488,13 @@ body.fiche{
     align-items: center;
     }
 
+    .grid_container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+
     .fiches figure img{
         width: 100%;
         display: block;
@@ -430,11 +512,25 @@ body.fiche{
     .fiches{
         width: 30%;
         min-width: 300px;
-        margin: 20px 5px;
+        padding: 20px 5px;
+        margin: auto;
+        display: block;
     }
 
     .fiches p{
         text-align: center;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .grid_container {
+            grid-template-columns: auto auto;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        .grid_container {
+            grid-template-columns: auto;
+        }
     }
 
     @media only screen and (max-width: 380px) {
@@ -543,6 +639,11 @@ body.probocis{
         width: 90%;
     }
 
+    .texte_corps{
+        column-count: 2;
+        column-gap: 30px;
+    }
+
 
     .paragraphe_intro{
         text-align: center;
@@ -575,6 +676,11 @@ body.probocis{
 
     .burger_menu{
         display: block;
+    }
+
+    .texte_corps{
+        column-count: 1;
+        column-gap: 30px;
     }
 
     .nav_desktop{
