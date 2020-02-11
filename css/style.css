@@ -109,6 +109,10 @@ body .flex_row {
   justify-content: space-between;
   align-items: center;
 }
+body .flex_footer {
+  display: flex;
+  flex-direction: row;
+}
 body .flex_wrap {
   display: flex;
   flex-wrap: wrap;
@@ -230,10 +234,40 @@ body .pre_footer:hover .donkey {
 }
 body footer {
   border-top: 1px solid white;
-  padding: 1em 20%;
+  padding: 2em 5em;
+}
+body footer h2 {
+  text-align: left;
+  margin-left: 1em;
 }
 body footer h3 {
   text-align: left;
+}
+body footer .img_footer {
+  width: 50%;
+  height: auto;
+}
+body footer .img_footer img {
+  width: 24%;
+}
+body .footer_flex_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .footer_flex_row img {
+  width: 100px;
+}
+body .footer_flex_row p {
+  margin: 0 1em;
+}
+body footer nav ul {
+  padding: 0;
+}
+body .conteneur_footer_flex_row {
+  display: flex;
+  justify-content: space-between;
 }
 @media only screen and (max-width: 700px) {
   body .burger_menu {
@@ -244,6 +278,29 @@ body footer h3 {
   }
   body li:hover {
     border: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .conteneur_footer_flex_row {
+    flex-direction: column;
+  }
+  body .footer_style div nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  body .footer_style div nav ul li {
+    text-align: center;
+  }
+  body .footer_flex_row {
+    flex-direction: column;
+  }
+  body .footer_flex_row p {
+    margin: 1em 0;
+    text-align: center;
+  }
+  body footer h2 {
+    text-align: center;
+    margin-left: 0;
   }
 }
 /******************************** Page Home ***********************************/
@@ -296,7 +353,11 @@ body.home .paragraphe {
   text-align: center;
 }
 body.home .fiches {
-  width: 30%;
+  width: 33%;
+  min-width: 280px;
+}
+body.home figure {
+  margin: 1em;
 }
 body.home figure img {
   width: 100%;
@@ -338,6 +399,12 @@ body.fiche .hero {
   display: flex;
   align-items: center;
 }
+body.fiche .grid_container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
 body.fiche .fiches figure img {
   width: 100%;
   display: block;
@@ -352,10 +419,22 @@ body.fiche figure {
 body.fiche .fiches {
   width: 30%;
   min-width: 300px;
-  margin: 20px 5px;
+  padding: 20px 5px;
+  margin: auto;
+  display: block;
 }
 body.fiche .fiches p {
   text-align: center;
+}
+@media only screen and (max-width: 1000px) {
+  body.fiche .grid_container {
+    grid-template-columns: auto auto;
+  }
+}
+@media only screen and (max-width: 700px) {
+  body.fiche .grid_container {
+    grid-template-columns: auto;
+  }
 }
 @media only screen and (max-width: 380px) {
   body.fiche h1 {
@@ -443,6 +522,10 @@ body.probocis .intro div {
   body.probocis .hero p {
     width: 90%;
   }
+  body.probocis .texte_corps {
+    column-count: 2;
+    column-gap: 30px;
+  }
   body.probocis .paragraphe_intro {
     text-align: center;
     margin: 1em 1em;
@@ -467,6 +550,10 @@ body.probocis .intro div {
   }
   body.probocis .burger_menu {
     display: block;
+  }
+  body.probocis .texte_corps {
+    column-count: 1;
+    column-gap: 30px;
   }
   body.probocis .nav_desktop {
     display: none;
